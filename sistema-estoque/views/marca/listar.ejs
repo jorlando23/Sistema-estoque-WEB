@@ -1,0 +1,29 @@
+<%-include('../template/header')-%>
+<section>
+    <h1>Cadastro de Marcas</h1>
+    <div class="mb-3 col-1">
+      <a href="/marca/novo" class="btn btn-primary" >Novo</a>
+    </div>
+    <div class="col-6">
+      <table class="table table-striped">
+        <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Ações</th>
+        </tr>
+         
+      <% marcas.forEach(function(marca){ %>
+        <tr>
+        <td><%- marca.id %> </td>
+        <td><%- marca.nome %> </td>
+        <td> 
+          <a class="btn btn-primary" href="">Editar</a>
+          <a class="btn btn-danger" href="/marca/editar/:<%- marca.id %>">Excluir</a>
+        </td>
+      </tr>
+      <% }) %>
+    </table>
+    </div>
+</section>
+<%-include('../template/footer')-%>
+
